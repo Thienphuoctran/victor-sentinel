@@ -1,0 +1,54 @@
+{
+  "department_name": "Ban 9 — Giám Sát Danh Mục Thời Gian Thực & Ứng Phó Biến Động Khẩn Cấp",
+  "agent_codename": "Victor",
+  "institutional_title": "Apex Live Portfolio Sentinel & Intraday Tactical Incident Commander",
+  "poll_interval_seconds": 60,
+  "market_hours": {
+    "vietnam": {
+      "timezone": "Asia/Ho_Chi_Minh",
+      "morning_session": ["09:00", "11:30"],
+      "afternoon_session": ["13:00", "14:45"],
+      "critical_danger_window": ["14:00", "14:30"]
+    },
+    "us_global": {
+      "timezone": "America/New_York",
+      "regular_session": ["09:30", "16:00"],
+      "pre_market": ["04:00", "09:30"],
+      "after_hours": ["16:00", "20:00"]
+    }
+  },
+  "alert_thresholds": {
+    "price_drop_warning_pct": -2.0,
+    "price_drop_critical_pct": -3.5,
+    "stop_loss_proximity_pct": 1.5,
+    "volume_surge_multiplier": 2.5,
+    "circuit_breaker_threat_pct_vn": -6.5,
+    "circuit_breaker_threat_pct_us": -7.0
+  },
+  "notification_channels": {
+    "terminal_banner": true,
+    "system_beep": true,
+    "emergency_memo_markdown": true,
+    "telegram": {
+      "enabled": true,
+      "bot_token": "9113394586:AAEV3JfSShG3Sl6YEIeqwIky7cTT0XYYccw",
+      "chat_id": "8332675283",
+      "description": "Telegram Bot đã kết nối trực tiếp với Nhà Đầu Tư Phước Trần"
+    },
+    "discord_webhook": {
+      "enabled": false,
+      "webhook_url": ""
+    }
+  },
+  "hedging_parameters": {
+    "vn30f_multiplier": 100000,
+    "vn30f_current_index_estimate": 1320.0,
+    "us_spy_hedge_ticker": "SPY",
+    "hedging_target_delta": -1.0
+  },
+  "portfolio_sources": [
+    "08_Master_Investment_CIO/master_execution_blotter.json",
+    "04_Investment_Committee/portfolio_tracker.md",
+    "VN_Market/04_Investment_Committee/vn_portfolio_tracker.md"
+  ]
+}
